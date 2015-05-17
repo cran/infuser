@@ -1,0 +1,13 @@
+36e964ee9a3939908a2f4c6d66286a18 *DESCRIPTION
+0c861ae25bae4f3996bedc87295c184c *LICENSE
+35b4dad35e1543bf69a6805741c97872 *NAMESPACE
+550e29fe13afc8471ca76f08b0df3c21 *R/core.R
+e40800e7e8347b006820b67994f74856 *R/helpers.R
+7f81d0d46067f7ad5008a93332e04b66 *inst/extdata/sql1.sql
+85a9cf02af4d6b967bb693e389989aec *man/infuse.Rd
+e7c612e327d8d315c3c626ab6f91fa52 *man/print_requested_params.Rd
+5cf8888cfe54d54f85bd782a1f157ba8 *man/read_template.Rd
+5211f33194ceb63d19463cc5f69cc05c *man/trim.Rd
+228bdc80b8e242d1074fdd1ef531fa93 *man/variables_requested.Rd
+2ab97222a4b38f3464beb1c747650098 *tests/testthat.R
+dde7044b19d8ed539c708ae8abbfedeb *tests/testthat/test_core_functionality.R
