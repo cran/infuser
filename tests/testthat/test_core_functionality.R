@@ -39,6 +39,7 @@ test_that("string replacements occurs as expected",{
 })
 
 test_that("string replacements occurs as expected when providing a list instead of arguments",{
+  expect_warning(infuse(SQL_string, key_value_list=list(month=3, year=2020))) #deprecated
   expect_equivalent(infuse(SQL_string, list(month=3, year=2020)), SQL_string_wanted)
   expect_equivalent(infuse(SQL_string_with_whitespaces, list(month=3, year=2020)), SQL_string_wanted)
 })
@@ -121,4 +122,20 @@ BOBBY_wanted <- "INSERT INTO Students (Name) VALUES ('Robert''); DROP TABLE Stud
 
 test_that("the custom transform function works",{
   expect_equivalent(infuse(sql, name = name, transform_function = my_transform_function), BOBBY_wanted)
+})
+
+
+###############################################
+context("variable identifiers")
+
+test_that("variable identifiers are correctly used",{
+  expect_equivalent(
+    infuse("${test}", variable_identifier = c("\\${", "}"), test = "123"), "123")
+})
+
+
+test_that("variable identifiers are correctly used when set as an option",{
+  options(variable_identifier = c("\\${", "}"))
+  expect_equivalent(
+    infuse("${test}", test = "123"), "123")
 })
