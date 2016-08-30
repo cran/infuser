@@ -1,8 +1,12 @@
-497ab8fdde5dbea43db7ee8883616ac2 *DESCRIPTION
+e5c66261604884066c15ba75bb5c140b *DESCRIPTION
 0c861ae25bae4f3996bedc87295c184c *LICENSE
 afbf587add6ae90be53be356d420b738 *NAMESPACE
-1c6bb39e9d8a6fef0df42f02b5c4b293 *R/core.R
+3dc027ae0fa0c8f94b917ee4cdb6180b *R/core.R
 f57220a99b3016b745a8ac2c7b557814 *R/helpers.R
+9efff84ef4c4837f53b76a425bcc138b *build/vignette.rds
+398967e9011c109c99fbd5080b747347 *inst/doc/getting_started.R
+89d024e8f6d1d2dd0f94e1f79c7e4f3d *inst/doc/getting_started.Rmd
+3a6bade30862334dc9bd56d40269e1f0 *inst/doc/getting_started.html
 7f81d0d46067f7ad5008a93332e04b66 *inst/extdata/sql1.sql
 b43009a3aae18e96e573eb523043dd62 *man/infuse.Rd
 83556a81108eaa9f10217f89e2876a03 *man/print.infuse.Rd
@@ -11,6 +15,6 @@ ce6a10289805eab3dcd0509dbff4abee *man/print_requested_params.Rd
 8f5aea3ebe7dc5e023e6ec13d65d4435 *man/trim.Rd
 a15da6ca150f1094154909add14f721a *man/variables_requested.Rd
 2ab97222a4b38f3464beb1c747650098 *tests/testthat.R
-87ec3efbda10407e362cf316c7c158e7 *tests/testthat/test_core_functionality.R
+b554a4dd96214913bdaefba20387fcf8 *tests/testthat/test_core_functionality.R
 fb93f4f35ec2b3550dbd1f5be4ac6631 *tests/testthat/test_helpers_functionality.R
-db98310a98141a42073821b96038b6f8 *vignettes/getting_started.Rmd
+89d024e8f6d1d2dd0f94e1f79c7e4f3d *vignettes/getting_started.Rmd
