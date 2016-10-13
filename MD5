@@ -1,12 +1,12 @@
-e5c66261604884066c15ba75bb5c140b *DESCRIPTION
+45e07e6ec727979bf75ab0fb634e469a *DESCRIPTION
 0c861ae25bae4f3996bedc87295c184c *LICENSE
 afbf587add6ae90be53be356d420b738 *NAMESPACE
 3dc027ae0fa0c8f94b917ee4cdb6180b *R/core.R
-f57220a99b3016b745a8ac2c7b557814 *R/helpers.R
-9efff84ef4c4837f53b76a425bcc138b *build/vignette.rds
+817b5a27059ce5c5fe91c27730dee953 *R/helpers.R
+1b687b577b4a2d8291b7350f5590fb82 *build/vignette.rds
 398967e9011c109c99fbd5080b747347 *inst/doc/getting_started.R
-89d024e8f6d1d2dd0f94e1f79c7e4f3d *inst/doc/getting_started.Rmd
-3a6bade30862334dc9bd56d40269e1f0 *inst/doc/getting_started.html
+2be9b02ec02f4f219f255855dda1a3a2 *inst/doc/getting_started.Rmd
+df50ecf578daa236f440810f0ac49c0d *inst/doc/getting_started.html
 7f81d0d46067f7ad5008a93332e04b66 *inst/extdata/sql1.sql
 b43009a3aae18e96e573eb523043dd62 *man/infuse.Rd
 83556a81108eaa9f10217f89e2876a03 *man/print.infuse.Rd
@@ -17,4 +17,4 @@ a15da6ca150f1094154909add14f721a *man/variables_requested.Rd
 2ab97222a4b38f3464beb1c747650098 *tests/testthat.R
 b554a4dd96214913bdaefba20387fcf8 *tests/testthat/test_core_functionality.R
 fb93f4f35ec2b3550dbd1f5be4ac6631 *tests/testthat/test_helpers_functionality.R
-89d024e8f6d1d2dd0f94e1f79c7e4f3d *vignettes/getting_started.Rmd
+2be9b02ec02f4f219f255855dda1a3a2 *vignettes/getting_started.Rmd
