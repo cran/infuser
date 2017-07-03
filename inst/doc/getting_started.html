@@ -4,7 +4,7 @@
 
 <head>
 
-<meta charset="utf-8">
+<meta charset="utf-8" />
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 
@@ -12,7 +12,7 @@
 
 <meta name="author" content="Bart Smeets" />
 
-<meta name="date" content="2017-03-14" />
+<meta name="date" content="2017-07-03" />
 
 <title>Getting started with infuser</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Getting started with infuser</h1>
 <h4 class="author"><em>Bart Smeets</em></h4>
-<h4 class="date"><em>2017-03-14</em></h4>
+<h4 class="date"><em>2017-07-03</em></h4>
 
 
 
@@ -82,7 +82,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <h2>Installation</h2>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">install.packages</span>(<span class="st">&quot;infuser&quot;</span>)</code></pre></div>
 <p>If you want to use the most up-to-date version, install using <code>devtools::install_github</code>.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools::<span class="kw">install_github</span>(<span class="st">&quot;Bart6114/infuser&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">devtools<span class="op">::</span><span class="kw">install_github</span>(<span class="st">&quot;Bart6114/infuser&quot;</span>)</code></pre></div>
 </div>
 <div id="hello-world" class="section level2">
 <h2>Hello World</h2>
@@ -90,7 +90,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(infuser)
 <span class="kw">library</span>(magrittr)
 
-<span class="st">&quot;Hello {{var1}}!&quot;</span> %&gt;%
+<span class="st">&quot;Hello {{var1}}!&quot;</span> <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">infuse</span>(<span class="dt">var1=</span><span class="st">&quot;world&quot;</span>)</code></pre></div>
 <pre><code>## Hello world!</code></pre>
 </div>
@@ -136,7 +136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">  </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;sql1.sql&quot;</span>, <span class="dt">package=</span><span class="st">&quot;infuser&quot;</span>)
 
 example_file</code></pre></div>
-<pre><code>## [1] &quot;/private/var/folders/th/n7_sp4sx5073fjg9qzcx0gvr0000gn/T/RtmpGYyqaw/Rinst92b155e0141b/infuser/extdata/sql1.sql&quot;</code></pre>
+<pre><code>## [1] &quot;/private/var/folders/th/n7_sp4sx5073fjg9qzcx0gvr0000gn/T/RtmpPxV9aN/Rinstcf26d2446ad/infuser/extdata/sql1.sql&quot;</code></pre>
 <p>Again, we can check which parameters are requested by the template.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">variables_requested</span>(example_file, <span class="dt">verbose =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## Variables requested by template:</code></pre>
@@ -173,7 +173,7 @@ name &lt;-<span class="st"> &quot;Robert'); DROP TABLE Students;--&quot;</span>
 <span class="kw">infuse</span>(sql, <span class="dt">name =</span> name)</code></pre></div>
 <pre><code>## INSERT INTO Students (Name) VALUES (Robert'); DROP TABLE Students;--)</code></pre>
 <p>Yikes! A way to solve this is to specify your own custom transform function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_transform_function&lt;-function(v){
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">my_transform_function&lt;-<span class="cf">function</span>(v){
   <span class="co"># replace single quotes with double quotes</span>
   v&lt;-<span class="kw">gsub</span>(<span class="st">&quot;'&quot;</span>, <span class="st">&quot;''&quot;</span>, v)
   <span class="co"># encloses the string in single quotes</span>
@@ -184,8 +184,8 @@ name &lt;-<span class="st"> &quot;Robert'); DROP TABLE Students;--&quot;</span>
 
 <span class="kw">infuse</span>(sql, <span class="dt">name =</span> name, <span class="dt">transform_function =</span> my_transform_function)</code></pre></div>
 <pre><code>## INSERT INTO Students (Name) VALUES ('Robert''); DROP TABLE Students;--')</code></pre>
-<p>Of course you can also use functions from other packages. Specifically for SQL I advise you to take a look at the <code>dplyr::build_sql</code> function.</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">infuse</span>(sql, <span class="dt">name =</span> name, <span class="dt">transform_function =</span> dplyr::build_sql)</code></pre></div>
+<p>Of course you can also use functions from other packages. Specifically for SQL I advise you to take a look at the <code>dbplyr::build_sql</code> function.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">infuse</span>(sql, <span class="dt">name =</span> name, <span class="dt">transform_function =</span> dbplyr<span class="op">::</span>build_sql)</code></pre></div>
 <pre><code>## INSERT INTO Students (Name) VALUES ('Robert''); DROP TABLE Students;--')</code></pre>
 </div>
 </div>
@@ -197,7 +197,7 @@ name &lt;-<span class="st"> &quot;Robert'); DROP TABLE Students;--&quot;</span>
   (function () {
     var script = document.createElement("script");
     script.type = "text/javascript";
-    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
     document.getElementsByTagName("head")[0].appendChild(script);
   })();
 </script>

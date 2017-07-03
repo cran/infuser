@@ -73,5 +73,5 @@ my_transform_function<-function(v){
 infuse(sql, name = name, transform_function = my_transform_function)
 
 ## ------------------------------------------------------------------------
-infuse(sql, name = name, transform_function = dplyr::build_sql)
+infuse(sql, name = name, transform_function = dbplyr::build_sql)
 
