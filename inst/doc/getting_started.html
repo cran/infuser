@@ -12,7 +12,7 @@
 
 <meta name="author" content="Bart Smeets" />
 
-<meta name="date" content="2017-07-03" />
+<meta name="date" content="2017-10-04" />
 
 <title>Getting started with infuser</title>
 
@@ -70,7 +70,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 <h1 class="title toc-ignore">Getting started with infuser</h1>
 <h4 class="author"><em>Bart Smeets</em></h4>
-<h4 class="date"><em>2017-07-03</em></h4>
+<h4 class="date"><em>2017-10-04</em></h4>
 
 
 
@@ -136,7 +136,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <span class="st">  </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="st">&quot;sql1.sql&quot;</span>, <span class="dt">package=</span><span class="st">&quot;infuser&quot;</span>)
 
 example_file</code></pre></div>
-<pre><code>## [1] &quot;/private/var/folders/th/n7_sp4sx5073fjg9qzcx0gvr0000gn/T/RtmpPxV9aN/Rinstcf26d2446ad/infuser/extdata/sql1.sql&quot;</code></pre>
+<pre><code>## [1] &quot;/private/var/folders/th/n7_sp4sx5073fjg9qzcx0gvr0000gn/T/Rtmp8mrLJw/Rinstd20ca7c24ff/infuser/extdata/sql1.sql&quot;</code></pre>
 <p>Again, we can check which parameters are requested by the template.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">variables_requested</span>(example_file, <span class="dt">verbose =</span> <span class="ot">TRUE</span>)</code></pre></div>
 <pre><code>## Variables requested by template:</code></pre>
@@ -186,6 +186,8 @@ name &lt;-<span class="st"> &quot;Robert'); DROP TABLE Students;--&quot;</span>
 <pre><code>## INSERT INTO Students (Name) VALUES ('Robert''); DROP TABLE Students;--')</code></pre>
 <p>Of course you can also use functions from other packages. Specifically for SQL I advise you to take a look at the <code>dbplyr::build_sql</code> function.</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">infuse</span>(sql, <span class="dt">name =</span> name, <span class="dt">transform_function =</span> dbplyr<span class="op">::</span>build_sql)</code></pre></div>
+<pre><code>## Warning: Installed Rcpp (0.12.12) different from Rcpp used to build dplyr (0.12.11).
+## Please reinstall dplyr to avoid random crashes or undefined behavior.</code></pre>
 <pre><code>## INSERT INTO Students (Name) VALUES ('Robert''); DROP TABLE Students;--')</code></pre>
 </div>
 </div>
